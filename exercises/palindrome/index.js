@@ -7,6 +7,14 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+function palindrome(str) {
+    const reversed = str.split("").reduce((acc, curr) => { acc.unshift(curr); return acc }, []).join("")
+    return reversed == str
+    // const reversed = str.split("").reverse().join("") 0.5 seconds more!
+}
+
 
 module.exports = palindrome;
+
+ // Using every function => return str.split("").every((ele,index, array) => ele === array.reverse()[index] ) 0.25 seconds better
+ // Cleaner approach: return str.split("").every((ele,index, array) => ele === array[str.length - 1 - index] )
