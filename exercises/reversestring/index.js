@@ -7,9 +7,9 @@
 //   reverse('Greetings!') === '!sgniteerG'
 
 function reverse(str) {
-    // reduce (acc = [], curr), unshift: push at index 0
-    
-    const reversed = str.split("").reduce((acc, curr) => { acc.unshift(curr); return acc   }, [])
+    // unshift: push at index 0
+    const reversed = []
+    str.split("").forEach((ele) => reversed.unshift(ele))
     return reversed.join("")
 }
 
