@@ -12,8 +12,34 @@
 //   pyramid(3)
 //       '  #  '
 //       ' ### '
-//       '#####'
+//       ' '
 
-function pyramid(n) {}
+// Solution 2: Recursive Solution
+function pyramid(n, row=0, text ="") {
+    if (n == row) {
+        return ;
+      }
+      innerSize = 2 * n - 1
+      if (text.length == innerSize) {
+        console.log(text)
+        return pyramid(n, row + 1)
+      }
+      centroid = parseInt(innerSize / 2)
+      text += text.length >=  centroid - row && text.length <= centroid + row ? "#" : " "
+      pyramid(n, row, text)
+}
 
 module.exports = pyramid;
+
+// Iterative solutin # 1
+// function pyramid(n) {
+//     innerSize = 2 * n - 1
+//     centroid = parseInt(innerSize / 2)
+//     for (let i = 0; i < n; i++) {
+//         let text = ""
+//         for (let j = 0; j < innerSize; j++) {
+//             text += j >= centroid - i && j <= centroid + i ? "#" : " "
+//         }
+//         console.log(text)
+//     }
+// }
