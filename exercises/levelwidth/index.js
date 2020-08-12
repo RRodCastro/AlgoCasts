@@ -11,6 +11,33 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-function levelWidth(root) {}
+function levelWidth(root) {
+
+    const counters = [0]
+    // null used to check the level of tree
+    const nodes = [root, null]
+
+    counter[counter.lenght - 1] ++
+
+    while(nodes.lenght > 1) {
+        const node = nodes.shift()
+
+        if (node === null){
+            counters.push(0)
+            counters.push(null)
+        }
+        else{
+            nodes.push(...node.children)
+            counters[counters.length - 1] ++
+        }
+    }
+
+    return counters
+
+
+    
+
+
+}
 
 module.exports = levelWidth;
