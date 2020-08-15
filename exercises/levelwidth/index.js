@@ -24,13 +24,13 @@ function levelWidth(root) {
 
         if (node === null){
             counters.push(0)
-            counters.push(null)
+            nodes.push(null)
         }
         else{
             nodes.push(...node.children)
             counters[counters.length - 1] ++
         }
-    }
+    }   
 
     return counters
 
